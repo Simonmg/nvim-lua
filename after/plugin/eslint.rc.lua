@@ -1,7 +1,7 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
-local project_library_path = vim.fn.getcwd()
+local keymap = vim.keymap
 
 local cmd = { "vscode-eslint-language-server", "--stdio"}
 
@@ -19,3 +19,5 @@ nvim_lsp.eslint.setup {
     "astro"
   }
 }
+
+keymap.set('n', 'fa', ':EslintFixAll<Return>', { silent = true })

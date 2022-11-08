@@ -28,10 +28,13 @@ packer.startup(function(use)
   }
   use 'nvim-tree/nvim-web-devicons'
   use { "nvim-telescope/telescope-file-browser.nvim" }
-  use({
+  use ({
     "glepnir/lspsaga.nvim",
     branch = "main",
   })
+  use 'lewis6991/gitsigns.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/prettier.nvim'
 
 end)
 
