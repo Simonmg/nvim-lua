@@ -26,6 +26,7 @@ packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'nvim-tree/nvim-web-devicons'
   use { "nvim-telescope/telescope-file-browser.nvim" }
   use ({
@@ -35,6 +36,5 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
-
 end)
 
