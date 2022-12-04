@@ -1,1 +1,1 @@
-vim.opt.clipboard:prepend { 'unamed':'unamedplus' }
+vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }

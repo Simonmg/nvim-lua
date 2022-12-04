@@ -1,5 +1,13 @@
 local status, n = pcall(require, "neosolarized")
+
+local has = function(x)
+  return vim.fn.has(x) == 1
+end
+
+local is_win = has "win32"
+
 if (not status) then return end
+if (is_win) then return end
 
 n.setup({
   comment_italics = true,

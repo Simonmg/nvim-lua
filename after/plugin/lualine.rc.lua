@@ -1,10 +1,22 @@
 local status, lualine = pcall(require, "lualine")
-if (not status) then return end
+
+if (not status) then return encoding end
+local has = function(x)
+
+  return vim.fn.has(x) == 1
+end
+
+local is_win = has "win32"
+local _theme = 'solarized_dark'
+
+if is_win then _theme = 'tokyonight' end
+
+print(_theme)
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    theme = _theme,
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
