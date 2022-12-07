@@ -19,10 +19,10 @@ ts.setup {
     "php",
     "json",
     "yaml",
-    "swift",
     "css",
     "html",
-    "lua"
+    "lua",
+    "php"
   },
   autotag = {
     enable = true,
