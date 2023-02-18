@@ -3,5 +3,5 @@ if (not status) then return end
 
 nvim_lsp.phpactor.setup {
   cmd = { "phpactor", "language-server" },
-  filetypes = { "php" },
+  filetype = { "php" }
 }
