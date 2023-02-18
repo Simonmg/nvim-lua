@@ -9,7 +9,7 @@ end
 local is_win = has "win32"
 local _theme = 'solarized_dark'
 
-if is_win then _theme = 'tokyonight' end
+if not is_win then _theme = 'tokyonight' end
 
 print(_theme)
 

@@ -6,7 +6,7 @@ end
 
 local is_mac = has "macunix"
 
-if (is_mac) then return end
+if (not is_mac) then return end
 if (not status) then return end
 
 tokyonight.setup({
