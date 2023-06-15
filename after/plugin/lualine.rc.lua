@@ -9,9 +9,7 @@ end
 local is_win = has "win32"
 local _theme = 'solarized_dark'
 
-if not is_win then _theme = 'tokyonight' end
-
-print(_theme)
+if is_win then _theme = 'tokyonight' end
 
 lualine.setup {
   options = {

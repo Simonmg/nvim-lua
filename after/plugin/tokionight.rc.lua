@@ -6,8 +6,8 @@ end
 
 local is_mac = has "macunix"
 
-if (not is_mac) then return end
 if (not status) then return end
+if (is_mac) then return end
 
 tokyonight.setup({
   style = "storm",
