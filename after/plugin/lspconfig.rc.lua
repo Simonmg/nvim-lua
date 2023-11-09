@@ -1,8 +1,6 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
-local protocol = require('vim.lsp.protocol')
-
 local on_atach = function(client, bufnr)
   --formating
   if client.server_capabilities.documentFormatingProvider then
@@ -41,3 +39,5 @@ nvim_lsp.lua_ls.setup {
     }
   }
 }
+
+nvim_lsp.tailwindcss.setup {}
