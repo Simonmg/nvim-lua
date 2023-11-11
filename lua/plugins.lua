@@ -7,7 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use { 'williamboman/mason.nvim' }
+  use { 'wbthomason/packer.nvim' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
@@ -17,7 +17,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp for nvim built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
-  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+  use({"L3MON4D3/LuaSnip"})
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'neovim/nvim-lspconfig' -- LSP
   use 'windwp/nvim-ts-autotag'
