@@ -7,7 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
+  use { 'williamboman/mason.nvim' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
@@ -23,15 +23,15 @@ packer.startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'nvim-tree/nvim-web-devicons'
   use { "nvim-telescope/telescope-file-browser.nvim" }
   use ({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
   })
   use ({
     'craftzdog/solarized-osaka.nvim'
@@ -40,7 +40,6 @@ packer.startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
   use {
     'nvim-tree/nvim-tree.lua',
     require = {
