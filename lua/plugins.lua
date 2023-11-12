@@ -46,5 +46,6 @@ packer.startup(function(use)
       'nvim-tree/nvim-web-devicons',
     }
   }
+  use 'APZelos/blamer.nvim'
 end)
 
