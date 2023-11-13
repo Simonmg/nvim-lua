@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.1699524327/share/lua/5.1/?.lua;/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.1699524327/share/lua/5.1/?/init.lua;/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.1699524327/lib/luarocks/rocks-5.1/?.lua;/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.1699524327/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/simonmalave/.cache/nvim/packer_hererocks/2.1.1699524327/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -78,6 +78,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["blamer.nvim"] = {
+    loaded = true,
+    path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/blamer.nvim",
+    url = "https://github.com/APZelos/blamer.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -110,19 +115,16 @@ _G.packer_plugins = {
     url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
+    load_after = {},
     loaded = true,
-    path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
+    needs_bufread = false,
+    path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim",
+    url = "https://github.com/nvimdev/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
-  },
-  ["mason-lspconfig.nvim"] = {
-    loaded = true,
-    path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
-    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -189,6 +191,11 @@ _G.packer_plugins = {
     path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+  ["solarized-osaka.nvim"] = {
+    loaded = true,
+    path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/solarized-osaka.nvim",
+    url = "https://github.com/craftzdog/solarized-osaka.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/simonmalave/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -202,6 +209,11 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-lspconfig ]]
+vim.cmd [[ packadd lspsaga.nvim ]]
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

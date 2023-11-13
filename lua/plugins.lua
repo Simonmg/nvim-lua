@@ -7,7 +7,7 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
-  use 'wbthomason/packer.nvim'
+  use { 'wbthomason/packer.nvim' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
@@ -17,21 +17,21 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp for nvim built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
-  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+  use({"L3MON4D3/LuaSnip"})
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'neovim/nvim-lspconfig' -- LSP
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'nvim-tree/nvim-web-devicons'
   use { "nvim-telescope/telescope-file-browser.nvim" }
   use ({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
   })
   use ({
     'craftzdog/solarized-osaka.nvim'
@@ -40,12 +40,12 @@ packer.startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
   use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
   use {
     'nvim-tree/nvim-tree.lua',
     require = {
       'nvim-tree/nvim-web-devicons',
     }
   }
+  use 'APZelos/blamer.nvim'
 end)
 
