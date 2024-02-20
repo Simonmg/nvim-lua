@@ -19,7 +19,7 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use({"L3MON4D3/LuaSnip"})
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'neovim/nvim-lspconfig' -- LSP
+  use { 'williamboman/mason.nvim', 'williamboman/nvim-lsp-installer', 'neovim/nvim-lspconfig' } -- LSP
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
   use {
@@ -39,7 +39,6 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/prettier.nvim'
-  use 'williamboman/mason.nvim'
   use {
     'nvim-tree/nvim-tree.lua',
     require = {

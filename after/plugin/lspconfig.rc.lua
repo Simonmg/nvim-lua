@@ -1,3 +1,4 @@
+require("nvim-lsp-installer").setup {}
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
@@ -15,12 +16,6 @@ local on_atach = function(client, bufnr)
     })
   end
 end
-
-nvim_lsp.tsserver.setup {
-  on_atach = on_atach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
-  cmd = { "typescript-language-server", "--stdio" }
-}
 
 nvim_lsp.lua_ls.setup {
   on_atach = on_atach,
@@ -40,4 +35,11 @@ nvim_lsp.lua_ls.setup {
   }
 }
 
-nvim_lsp.tailwindcss.setup {}
+nvim_lsp.tsserver.setup {
+  on_atach = on_atach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+  cmd = { "typescript-language-server", "--stdio" }
+}
+
+
+
