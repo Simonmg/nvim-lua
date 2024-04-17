@@ -17,6 +17,11 @@ telescope.setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      theme = "dropdown"
+    }
+  },
   extensions = {
     file_browser = {
       theme = "dropdown",
@@ -58,5 +63,13 @@ end)
 
 vim.keymap.set("n", "ff", function ()
   builtin.find_files()
+end)
+
+vim.keymap.set("n", "gs", function ()
+  builtin.git_status()
+end)
+
+vim.keymap.set("n", "gb", function ()
+  builtin.git_branches()
 end)
 
