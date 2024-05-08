@@ -6,7 +6,7 @@ saga.setup {
     typescript = 'typescript'
   },
   ui = {
-    code_action = '💡'
+    -- code_action = '*'
   },
   finder = {
     max_height = 0.5,
