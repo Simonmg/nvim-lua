@@ -1,5 +1,7 @@
 require("nvim-lsp-installer").setup {}
+
 local status, nvim_lsp = pcall(require, 'lspconfig')
+local statusTheme, tokionight = pcall(require, 'tokionight')
 if (not status) then return end
 
 local on_atach = function(client, bufnr)
@@ -39,5 +41,24 @@ nvim_lsp.tsserver.setup {
   on_atach = on_atach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
   cmd = { "typescript-language-server", "--stdio" }
+};
+
+nvim_lsp.vuels.setup{
+  cmd = { "vls" },
+  on_atach = on_atach,
+  filetypes = { "vue" }
+}
+
+nvim_lsp.volar.setup {}
+
+
+if (not statusTheme) then return end
+
+tokionight.setup {
+  transparent = true,
+  styles = {
+    sidebars = "transparent",
+    floats = "transparent"
+  }
 }
 
