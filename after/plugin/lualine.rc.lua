@@ -7,9 +7,9 @@ local has = function(x)
 end
 
 local is_win = has "win32"
-local _theme = 'solarized_dark'
-
-if is_win then _theme = 'tokyonight' end
+-- local _theme = 'solarized_dark'
+local _theme = 'tokyonight'
+-- if is_win then _theme = 'tokyonight' end
 
 lualine.setup {
   options = {
